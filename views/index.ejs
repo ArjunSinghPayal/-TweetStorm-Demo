@@ -1,0 +1,21 @@
+<%- include('partials/header',{ title: 'All Tweets'}) %>
+<body>
+  <h1>All Tweets:</h1>
+  <% for(tweet of tweets){ %>
+  <h3><%= tweet.username %></h3>
+  <article><%= tweet.text %></article>
+  <div style="display: inline-block">
+    <p>
+      Likes: <%= tweet.like_count %> | Replies: <%= tweet.reply_count %> |
+      Retweets: <%= tweet.retweet_count %>
+    </p>
+  </div>
+  <a href="/tweets/<%= tweet.id %>">
+    <button>Details</button>
+  </a>
+  <hr />
+  <% } %>
+  <a href="/tweets/new">
+    <button>Post a new Tweet</button>
+  </a>
+</body>

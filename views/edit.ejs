@@ -1,0 +1,14 @@
+<%- include('partials/header',{ title: 'Edit Tweet'}) %>
+<body>
+  <h1>Edit Tweet:</h1>
+  <form action="/tweets/<%= tweet.id %>?_method=PATCH" method="post">
+    <h3><%= tweet.username %></h3>
+    <label for="tweet">Edit Tweet:</label> <br />
+    <textarea name="text" id="tweet" cols="30" rows="10">
+    <%= tweet.text %></textarea
+    >
+    <button>Save</button>
+  </form>
+  <br />
+  <a href="/tweets/<%= tweet.id %>">Go Back</a>
+</body>

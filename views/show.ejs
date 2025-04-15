@@ -1,0 +1,25 @@
+<%- include('partials/header',{ title: 'Tweet'}) %>
+<body>
+  <h1><u>Tweet</u></h1>
+  <h3><%= tweet.username %></h3>
+  <article><%= tweet.text %></article>
+  <section>Tweeted At: <%= tweet.created_at %></section>
+  <div style="display: inline-block">
+    <p>
+      Likes: <%= tweet.like_count %> | Replies: <%= tweet.reply_count %> | Retweets: <%=
+      tweet.retweet_count %> | Quotes: <%= tweet.quote_count %>
+    </p>
+  </div>
+  </br>
+  <a href="/tweets/<%= tweet.id %>/edit">
+    <button>Edit Tweet</button>
+  </a>
+  <form method="post" action="/tweets/<%= tweet.id %>?_method=DELETE">
+    <button>Delete</button>
+  </form>
+  </br><hr>
+  <a href="/tweets">
+    Go Back To All Tweets
+  </a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<%- include('partials/header',{ title: 'Post Tweet'}) %>
+<body>
+  <h1>Add a New Tweet</h1>
+  <form action="/tweets" method="post">
+    <label for="tweet">Post Tweet:</label><br />
+    <textarea name="text" id="tweet" cols="30" rows="10"></textarea><br />
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      placeholder="Username"
+      name="username"
+    /><br />
+    <button>Post</button>
+  </form>
+  <br />
+  <a href="/tweets">Go Back to All Tweets</a>
+</body>
